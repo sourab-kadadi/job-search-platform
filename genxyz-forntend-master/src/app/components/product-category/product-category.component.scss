@@ -1,0 +1,120 @@
+$white: #fff;
+$font-main: "Nexa Bold", sans-serif;
+$font-text: "Roboto", sans-serif;
+
+.job-categories {
+    .job-categories-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        .job-category {
+            position: relative;
+            width: 250px;
+            height: 300px;
+            margin: 10px;
+            transform: rotateX(0) rotateY(0);
+            transform-style: preserve-3d;
+            transition-duration: 0.1s;
+            transition-timing-function: ease !important;
+            backface-visibility: hidden;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #424242;
+            will-change: tranform;
+
+            &.is-out {
+                transform: rotateX(0) rotateY(0) !important;
+                transition-duration: 1s;
+            }
+
+            &:hover {
+                .job-category-overlay {
+                    opacity: .8;
+                }
+            }
+
+            .job-category-overlay {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                background: url(/assets/img/blur-overlay.jpg) no-repeat center center;
+                background-size: cover;
+                mix-blend-mode: lighten;
+                opacity: 0.1;
+                transition: all .3s;
+            }
+
+            .job-category-image {
+                img {
+                    max-width: 100%;
+                    width: 250px;
+                    height: 300px;
+                    mix-blend-mode: lighten;
+                    object-fit: cover;
+                }
+            }
+
+            .job-category-heading {
+                position: absolute;
+                bottom: 20px;
+                left: 20px;
+                width: 100%;
+                color: $white;
+
+                h2 {
+                    font-family: $font-main;
+                    font-size: 1.4rem;
+                    font-weight: 700;
+                    margin: 0;
+                    transform: translateZ(30px);
+                }
+
+                .small {
+                    display: inline-block;
+                    font-family: $font-text;
+                    margin-bottom: 2px;
+                    text-transform: uppercase;
+                    font-size: 10px;
+                    transform: translateZ(15px);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .job-categories {
+        .job-categories-inner {
+            .job-category {
+                width: 100%;
+
+                .job-category-image {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .job-categories {
+        .job-categories-inner {
+            .job-category {
+                width: 280px;
+
+                .job-category-image {
+                    img {
+                        width: 280px;
+                    }
+                }
+            }
+        }
+    }
+}

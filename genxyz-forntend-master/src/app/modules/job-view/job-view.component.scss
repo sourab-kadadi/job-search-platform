@@ -1,0 +1,139 @@
+.view-company-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  span {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+.view-desc-title {
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+    span:nth-child(2) {
+        font-size: 13px;
+        color: gray;
+    }
+  }
+
+  .view-angular-editor {
+    padding: 0px 15px;
+    font-size: 14px;
+    color: black;
+    white-space: pre-wrap;
+  }
+
+.applybutton {
+  cursor: pointer;
+  width: 150px;
+  height: 31px;
+  font-weight: bold;
+  border-radius: 16px;
+  font-size: 13px;
+  border: none;
+  box-shadow: 0px 0px 3px 0px grey;
+  // background: rgb(146,151,207);
+  background-size: 0% 100%;
+  background: linear-gradient(
+    173deg,
+    rgba(146, 151, 207, 1) 0%,
+    rgba(0, 0, 128, 1) 100%
+  );
+  transition: background-color .5s;
+  color: #fff;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #404089;
+  span {
+    font-size: 22px;
+  }
+}
+
+.applybutton:hover {
+    box-shadow: 0px 0px 6px 0px grey;
+}
+
+@keyframes applybutton {
+  0% {
+    transform: linear-gradient(
+      173deg,
+      rgba(146, 151, 207, 1) 0%,
+      rgba(0, 0, 128, 1) 100%
+    );
+  }
+  50% {
+    transform: linear-gradient(
+      250deg,
+      rgba(146, 151, 207, 1) 0%,
+      rgba(0, 0, 128, 1) 100%
+    );
+  }
+  100% {
+    transform: linear-gradient(
+      356deg,
+      rgba(146, 151, 207, 1) 0%,
+      rgba(0, 0, 128, 1) 100%
+    );
+  }
+}
+
+.view-image {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 100%;
+    width: 100%;
+  }
+
+}
+
+.view-job-title {
+    font-weight: bold;
+    color: #4a4a4a;
+    font-size: 25px;
+    padding: 2px 10px 2px;
+    text-align: center;
+  }
+
+  .view-job-salary {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4a4a4a;
+  }
+
+  .application-submitted {
+    font-size: 13px;
+    font-weight: bold;
+    background: #e1e1e1;
+    padding: 6px 28px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    margin: 7px;
+    box-shadow: 0px 1px 4px 0px;
+
+    span {
+      color: #ffba08;
+    font-weight: bold;
+    font-size: 20px;
+    }
+  }
+
+  .bottom-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .show-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

@@ -1,0 +1,20 @@
+
+version: '3.9'
+services:
+  myapp:
+    container_name: myapp
+    restart: always
+    build: .
+    ports:
+      - '2000:2000'
+    links:
+      - redis
+    depends_on:
+      - redis
+    environment:
+      - REDIS_HOST=redis
+  redis:
+    container_name: redis
+    image: 'redis:4.0.11'
+    ports:
+      - '6379:6379'

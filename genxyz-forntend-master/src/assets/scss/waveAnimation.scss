@@ -1,0 +1,116 @@
+/* ==========================================================================
+7. Animated Waves
+========================================================================== */
+
+.has-animated-waves {
+  position: relative;
+  z-index: 10;
+
+  &.waves-top {
+    .animated-waves {
+      top: 0;
+    }
+  }
+
+  &.waves-bottom {
+    .animated-waves {
+      bottom: 0;
+    }
+  }
+
+  .animated-waves {
+    position: absolute;
+    left: 0;
+    width: 100%;
+
+    &.is-reversed {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.waves-primary {
+  .animated-waves {
+    .parallax > use {
+      &:first-child {
+        fill: rgba($primary, 0.7) !important;
+      }
+
+      &:nth-child(2) {
+        fill: rgba($primary, 0.5) !important;
+      }
+
+      &:nth-child(3) {
+        fill: rgba($primary, 0.3) !important;
+      }
+
+      &:nth-child(4) {
+        fill: rgba($primary, 1) !important;
+      }
+
+      &:last-child {
+        fill: rgba($primary, 0.7) !important;
+      }
+    }
+  }
+}
+
+.animated-waves {
+  .waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 250px;
+  }
+
+  .parallax > use {
+    animation: move-forever 18s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .waves {
+      height: 40px;
+      min-height: 40px;
+    }
+
+    .content {
+      height: 30vh;
+    }
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}

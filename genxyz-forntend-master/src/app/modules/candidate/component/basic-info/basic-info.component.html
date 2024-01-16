@@ -1,0 +1,57 @@
+<div>
+  <h4 class="subtitleCustom">
+    Basic Details
+    <button *ngIf="!user && view" (click)="addPersonalDetails('add')">add <span class="material-icons vCenter"> add </span></button>
+    <button *ngIf="user && view" (click)="addPersonalDetails('edit')">edit <span class="material-icons vCenter"> edit </span></button>
+  </h4>
+  <ng-container *ngIf="user && view">
+    <h1>Hi, {{ user?.firstName }} {{ user?.lastName }}</h1>
+    <div class="basicInfo" fxLayout="row wrap" fxLayoutGap="10px">
+      <p>
+        <span class="material-icons vCenter"> email </span><span>{{ user?.email }}</span>
+      </p>
+      <p>
+        <span class="material-icons vCenter"> phone </span><span>{{ user?.phoneNo }}</span>
+      </p>
+      <p><span class="material-icons vCenter"> radar </span><span>{{user?.expType}}</span></p>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="user && !view">
+    <form #basicInfo="ngForm" (ngSubmit)="Save()">
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        <h1>Hi,</h1>
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input type="text" name="firstName" [(ngModel)]="user.firstName" matInput placeholder="Ex. 4" />
+        </mat-form-field>
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input type="text" name="lastName" [(ngModel)]="user.lastName" matInput placeholder="Ex. 4" />
+        </mat-form-field>
+      </div>
+      <!-- </h1> -->
+      <div fxLayout="row wrap" fxLayoutGap="10px">
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" name="email" [(ngModel)]="user.email" matInput placeholder="Ex. 4" />
+        </mat-form-field>
+        <mat-form-field fxFlex appearance="fill">
+          <mat-label>Mobile No.</mat-label>
+          <input type="text" name="phoneNo" [(ngModel)]="user.phoneNo" matInput placeholder="Ex. 4" />
+        </mat-form-field>
+
+        <mat-form-field fxFlex appearance="fill">
+        <mat-select name="expType" [(ngModel)]="user.expType">
+            <mat-option value="FRESHERS">Freshers</mat-option>
+            <mat-option value="EXPREIENCED">Experienced</mat-option>
+        </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+        <button mat-raised-button color="primary" type="submit">Save</button>
+        <button mat-raised-button color="warn" type="button" (click)="Cancel()">Cancel</button>
+      </div>
+    </form>
+  </ng-container>
+</div>

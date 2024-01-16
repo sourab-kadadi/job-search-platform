@@ -1,0 +1,66 @@
+<div  class="section is-narrow mat-typography">
+  <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+
+  <!-- <section> -->
+    <div class="profileFrame" fxLayout.lt-md="column" fxLayout="row" fxLayoutGap="10px">
+      <!-- 1st section -->
+      <div class="boxShadow padding10 box" fxFlex="20">
+        <app-image-upload [imageData]="profile?.profileImg" (onSave)="saveProfilePic($event)"></app-image-upload>
+        <div class="profileComplete">
+          <span>{{value}}</span>
+          <span>% Profile Complete</span>
+        </div>
+        <div>
+          <mat-progress-bar [mode]="mode" [value]="value"></mat-progress-bar>
+          </div>
+      </div>
+      <!-- 2nd Section -->
+      <div class="boxShadow padding10" fxFlex>
+
+        <div fxLayout="row wrap " fxLayoutGap="10px">
+          <div #keySkills class="row box" fxFlex>
+            <app-basic-info [user]="user" (onCancel)="onCancel()" (onSave)="updateUserInfo($event)"></app-basic-info>
+          </div>
+          <div class="row"></div>
+        </div>
+
+        <div fxLayout="row wrap " fxLayoutGap="10px">
+          <div #keySkills class="row box" fxFlex>
+            <app-key-skills (onSave)="saveKeySkills($event)" [skills]="profile?.keySkills" (onCancel)="onCancel()"></app-key-skills>
+          </div>
+          <div class="row"></div>
+        </div>
+
+
+        <div fxLayout="row wrap " fxLayoutGap="10px" *ngIf="user.expType && user.expType != 'FRESHER'">
+          <div #keySkills class="row box" fxFlex>
+            <app-professional-details [professionalDetails]="profile?.professionalDetails" (onSave)="saveProfessionalDetails($event)" (onCancel)="onCancel()"></app-professional-details>
+          </div>
+          <div class="row"></div>
+        </div>
+
+
+
+
+        <div fxLayout="row wrap " fxLayoutGap="10px">
+          <div #personlaDetails class="row box" fxFlex>
+            <app-personal-details [personalDetails]="profile?.personalDetails" (onSave)="savePersonalDetails($event)" (onCancel)="onCancel()"></app-personal-details>
+          </div>
+          <div class="row"></div>
+        </div>
+
+        <div fxLayout="row wrap " fxLayoutGap="10px">
+          <div #keySkills class="row box" fxFlex>
+            <h4 class="subtitleCustom">Upload CV</h4>
+            <app-upload-file [cvData]="profile?.cv" (onSave)="saveCv($event)"></app-upload-file>
+          </div>
+          <div>
+          </div>
+          <div class="row"></div>
+        </div>
+        <div>
+        </div>
+      </div>
+    </div>
+  <!-- </section> -->
+  </div>

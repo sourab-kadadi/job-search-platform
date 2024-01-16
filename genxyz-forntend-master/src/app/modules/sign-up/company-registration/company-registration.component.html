@@ -1,0 +1,112 @@
+<div class="clearfix "></div>
+<div class="hero product-hero is-app-grey is-relative">
+    <!-- Hero image -->
+    <div class="parallax-overlay" style="background-color: rgb(84, 83, 117);opacity: 0.3;background-image: url('/assets/img/remoteWork.jpg');transform: scaleX(-1);"></div>
+    <div id="main-hero" class="hero-body">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-5 signup-column has-text-left">
+
+                    <!--Update Pill-->
+
+                    <h1 class="title main-title text-bold is-2">
+                        Build your Company Big.
+                    </h1>
+                    <!-- <h2 class="subtitle is-5 no-margin-bottom body-color">
+                        Gain Competitive edge by engaging a globally distributed team Period.
+                    </h2> -->
+                </div>
+                <div class="column is-7">
+                    <!-- Hero mockup -->
+                    <!-- <figure class="image">
+                        <img src="assets/img/banner1.gif"  alt="">
+                    </figure> -->
+                    <section class="tab-sec sign-up-background">
+                        <!-- <div class="container" fxLayoutAlign="center"><h1 class="titleRegistration">Register as Partner</h1></div> -->
+                        <div>
+                          <mat-card class="cardStyle" fxFlex style="position: relative;">
+                            <div fxLayout="row">
+                              <!-- <div fxFlex="25" style="background-image:url(../../../assets/img/subSignUp.jpg);"></div> -->
+                              <div fxFlex class="SignUpFormStyle">
+                                <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+                                <form [formGroup]="customerForm" (ngSubmit)="custoemrFormSubmit()">
+                                  <div fxLayout="column">
+                                    <div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px">
+                                      <mat-form-field fxFlex appearance="outline">
+                                        <mat-label>First Name</mat-label>
+                                        <input matInput placeholder="Enter your first name" formControlName="firstName" />
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                        <mat-hint>Hint: James</mat-hint>
+                                      </mat-form-field>
+                                      <mat-form-field fxFlex appearance="outline">
+                                        <mat-label>Last Name</mat-label>
+                                        <input matInput placeholder="Enter your last name" formControlName="lastName" />
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                        <mat-hint>Hint: Bond</mat-hint>
+                                      </mat-form-field>
+                                    </div>
+                                    <div fxLayout="column" formGroupName="companyDetails">
+                                      <mat-form-field fxFlex appearance="outline">
+                                        <mat-label>Company</mat-label>
+                                        <input matInput placeholder="Enter your company name" formControlName="companyName" />
+                                        <mat-icon matSuffix>perm_identity</mat-icon>
+                                        <mat-hint>Hint: Genxyz work</mat-hint>
+                                      </mat-form-field>
+                                    </div>
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Email</mat-label>
+                                      <input type="email" matInput placeholder="Enter your email address" formControlName="email" />
+                                      <mat-icon matSuffix>mark_as_unread</mat-icon>
+                                      <mat-hint>Hint: 007@gmail.com</mat-hint>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Telephone</mat-label>
+                                      <!-- <span matPrefix>+91 &nbsp;</span> -->
+                                      <input type="tel" matInput placeholder="Enter your phone number" formControlName="phoneNo" />
+                                      <mat-icon matSuffix>settings_cell</mat-icon>
+                                      <mat-hint>Hint: +91 9111123421</mat-hint>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Password</mat-label>
+                                      <input type="password" matInput placeholder="Enter your password" formControlName="psw" />
+                                      <mat-icon matSuffix>https</mat-icon>
+                                      <mat-hint>Hint: Strong Password (Ex: P@ssword1) </mat-hint>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Gender</mat-label>
+                                      <mat-select formControlName="gender">
+                                        <mat-option value="MALE">Male</mat-option>
+                                        <mat-option value="FEMALE">Female</mat-option>
+                                        <mat-option value="OTHER">Other</mat-option>
+                                      </mat-select>
+                                      <mat-hint>Hint:Select Male / Female</mat-hint>
+                                    </mat-form-field>
+                                    <div></div>
+                                    <button mat-raised-button submit [disabled]="!customerForm.valid" color="primary">
+                                      {{ customerForm.valid ? "Register" : "Fill all the fields to register as Company" }}
+                                    </button>
+                                  </div>
+                                </form>
+                                <div class="NeedRegisterStyle" fxLayoutAlign="center" routerLink="/client-login">Login as Company ?</div>
+                              </div>
+                            </div>
+                          </mat-card>
+                        </div>
+                      </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-process-steps></app-process-steps>
+
+<!-- <app-product-category></app-product-category> -->
+
+<!-- Title Header End -->
+<!-- Tab Section Start -->
+<!-- <app-howitwork></app-howitwork>
+<app-full-video-section [attributes]="videoAttribute"></app-full-video-section> -->
+
+<!-- Tab section End -->

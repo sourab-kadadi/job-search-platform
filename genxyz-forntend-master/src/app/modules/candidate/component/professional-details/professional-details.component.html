@@ -1,0 +1,50 @@
+<h4 class="subtitleCustom">
+  Professional Details
+  <button *ngIf="!professionalDetails && view" (click)="addProfessionalDetails('add')">add <span class="material-icons vCenter"> add </span></button>
+  <button *ngIf="professionalDetails && view" (click)="addProfessionalDetails('edit')">edit <span class="material-icons vCenter"> edit </span></button>
+</h4>
+<div *ngIf="view">
+<div class="keyValueInfo">
+  <h6>Total Work Experience</h6>
+  <p>{{professionalDetails?.experience ? professionalDetails.experience?.year + ' years,' +  professionalDetails.experience?.month + ' month'  : "No Experience"}}</p>
+</div>
+<div class="keyValueInfo">
+  <h6>Industry</h6>
+  <p>{{professionalDetails?.industry || 'Fresh Graduates/Management Trainee/Intern /No Experience'}}</p>
+</div>
+<div class="keyValueInfo">
+  <h6>Monthly Salary</h6>
+  <p>{{professionalDetails?.salary?.amount || '0 INR'}}</p>
+</div>
+</div>
+<div *ngIf="!view && professionalDetails">
+  <form #profestionalDetails="ngForm" (ngSubmit)="Save()">
+<div fxLayout="row" fxLayoutGap="10px" >
+<mat-form-field fxFlex ="50" appearance="fill">
+    <mat-label>Total Experience (Year)</mat-label>
+    <input type="number" name="expYear" [(ngModel)]="professionalDetails.experience.year" matInput placeholder="Ex. 4">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Total Experience (Month)</mat-label>
+    <input type="number" name="expMonth" [(ngModel)]="professionalDetails.experience.month" maxLength="2" min="0" max="12" matInput placeholder="Ex. 2">
+  </mat-form-field>
+</div>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Industry</mat-label>
+    <mat-select class="full-width" name="industry" [(ngModel)]="professionalDetails.industry">
+      <mat-option *ngFor="let industry of industrys" [value]="industry.name">{{industry.name}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill" >
+    <mat-label>Monthly Salary(in Rupees)</mat-label>
+    <input type="number" matInput placeholder="Ex. 30000" name="amount" [(ngModel)]="professionalDetails.salary.amount">
+  </mat-form-field>
+
+  <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+    <button mat-raised-button color="primary" type="submit">Save</button>
+    <button mat-raised-button color="warn" type="button" (click)="Cancel()">Cancel</button>
+</div>
+</form>
+</div>

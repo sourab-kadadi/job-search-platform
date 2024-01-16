@@ -1,0 +1,52 @@
+$themeColor: #000971ad;
+
+mat-form-field mat-icon {
+    color: $themeColor;
+}
+
+.cardStyle {
+    margin: 30px;
+}
+
+.SignUpFormStyle {
+padding: 10px;
+}
+
+.headerMargin {
+    margin-top: 100px;
+}
+
+.titleRegistration {
+ color: #fff;
+}
+
+.fromStyle {
+    padding: 30px;
+}
+
+.mat-tab-header {
+    margin-bottom: 25px;
+}
+
+.NeedRegisterStyle {
+    color: $themeColor;
+    font-weight: 500;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .cardStyle {
+        margin: 0px;
+    }
+//  .hero-body {
+//     margin-bottom: 18.5rem;
+//  }
+
+ #main-hero {
+    max-height: 100% !important;
+     height: 100% !important;
+ }
+
+}

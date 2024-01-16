@@ -1,0 +1,49 @@
+<div class="clearfix clearHeader"></div>
+
+<div class="container" fxLayout="row" style="position: relative;">
+<div fxFlex="20" fxHide.lt-md></div>
+<div fxFlex="60" fxFlex.lt-md class="list-view">
+<div class="search">
+    <div class="search-align" fxLayout="row">
+    <div fxLayout="row " class="location">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">location_on</mat-icon>
+        <span>Anywhere</span>
+    </div>
+    <input type="text" placeholder="search by title, company or keywork" [(ngModel)]="filter.search" (input)="onChangeSearch()">
+    <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+    </div>
+</div>
+<div *ngIf="jobList.length" class="job-list-main has-slimscroll">
+  <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+<div fxLayout="row" class="job-list" *ngFor="let job of jobList">
+  <div class="job-logo" fxFlex="10" fxLayoutAlign="center center">
+      <img *ngIf="job.logo" src="{{s3path + job.logo}}">
+      <img *ngIf="!job.logo" src="assets/img/company.jpg">
+  </div>
+  <div fxFlex class="jobDetailMain">
+      <div class="jobDetails" fxLayout="column">
+        <h3 class="job-title" fxLayoutAlign="space-between center"><span>{{job.jobTitle}}</span> <span [routerLink]="['/client/post-job/edit', job._id]"><mat-icon aria-hidden="false" aria-label="Example home icon"  fxLayoutAlign="center center">edit</mat-icon></span></h3>
+        <h6 class="job-location" fxLayoutAlign="space-between center" >
+        <span fxLayoutAlign="center center"> {{job.location.state}}, {{job.location.country}} </span>
+        </h6>
+        <p class="job-timing"><span>{{job.createdAt | dateAgo}} </span> . <span>{{job.application}} applied</span></p>
+      </div>
+  </div>
+</div>
+</div>
+<div *ngIf="!jobList.length" class="vh100-center vh100-border">
+  <h1 class="title">Not Found</h1>
+  <div class="navbar-item is-button">
+    <a id="#signup-btn" routerLink="/client/add" class="button button-cta is-bold is-rounded btn-align primary-btn raised">
+        Post Your First Job
+    </a>
+</div>
+</div>
+<button *ngIf="jobList.length" routerLink="/client/add" class="mat-fab-bottom-right" mat-fab>
+  <mat-icon class="icon">add</mat-icon>
+</button>
+</div>
+<div fxFlex="20" fxHide.lt-md></div>
+
+</div>
+

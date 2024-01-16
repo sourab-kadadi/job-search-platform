@@ -1,0 +1,13 @@
+<div class="clearfix clearHeader"></div>
+<div class="section is-narrow mat-typography">
+  <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+  <div class="profileFrame" fxLayout.lt-md="column" fxLayout="row wrap" fxLayout fxHide.lt-md>
+        <mat-card class="example-card coninerColor">
+            <app-job-form [jobPostDetails]= "jobPostDetails" (onCancel)="cancel($event)" (onSave)="save($event)"></app-job-form>
+        </mat-card>
+  </div>
+
+  <div class="profileFrame" fxLayout.lt-md="column" fxLayout="row wrap" fxLayout fxHide.gt-md fxHide.md>
+        <app-job-form [jobPostDetails]= "jobPostDetails" (onCancel)="cancel($event)" (onSave)="save($event)"></app-job-form>
+</div>
+</div>

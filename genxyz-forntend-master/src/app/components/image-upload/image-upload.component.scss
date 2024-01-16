@@ -1,0 +1,29 @@
+.initImgMain, .imageMain {
+    height: 300px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 2px dashed;
+    cursor: pointer;
+    border: 2px dashed gainsboro;
+    position: relative;
+}
+
+.initImgSpan {
+    font-size: 150px;
+    color: gainsboro;
+}
+
+input[type="file"] {
+    display: none;
+    cursor: pointer;
+}
+
+
+.cancelButton{
+    position: absolute;
+    top: 0;
+    right: 0;
+}

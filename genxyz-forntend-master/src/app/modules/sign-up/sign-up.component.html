@@ -1,0 +1,84 @@
+
+			<div class="clearfix"></div>
+			
+			<!-- Title Header Start -->
+			<!-- <section class="inner-header-title" style="background-image:url(http://via.placeholder.com/1920x850);">
+				<div class="container">
+					<h1>Create And Account</h1>
+				</div>
+			</section> -->
+			<div class="clearfix"></div>
+			<!-- Title Header End -->
+<!-- Tab Section Start -->
+<section class="tab-sec headerMargin sign-up-background">
+  		<div class="container" fxLayoutAlign="center">
+					<h1 class=titleRegistration>Register as Partner</h1>
+				</div>
+  <div fxLayoutAlign="center">
+      <mat-card class="cardStyle" fxFlex fxFlex.gt-md="50" style="position: relative;">
+        <div fxLayout="row">
+          <div fxFlex="25" style="background-image:url(../../../assets/img/subSignUp.jpg);"></div>
+          <div fxFlex class="SignUpFormStyle">
+            <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+            <form [formGroup]="customerForm" (ngSubmit)="custoemrFormSubmit()">
+              <div fxLayout="column">
+                <div fxLayout="column" fxLayout.gt-md="row" fxLayoutGap.gt-md="20px">
+                  <mat-form-field fxFlex appearance="outline">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="firstName">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-hint>Hint: James</mat-hint>
+                  </mat-form-field>
+                  <mat-form-field fxFlex appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Placeholder" formControlName="lastName">
+                    <mat-icon matSuffix>perm_identity</mat-icon>
+                    <mat-hint>Hint: Bond</mat-hint>
+                  </mat-form-field>
+                </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput placeholder="Placeholder" formControlName="email">
+                <mat-icon matSuffix>mark_as_unread</mat-icon>
+                <mat-hint>Hint: 007@gmail.com</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Telephone</mat-label>
+                <span matPrefix>+91 &nbsp;</span>
+                <input type="tel" matInput placeholder="8105581250" formControlName="phoneNo">
+                <mat-icon matSuffix>settings_cell</mat-icon>
+                <mat-hint>Hint: +91 8105581250</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Placeholder" formControlName="psw">
+                <mat-icon matSuffix>https</mat-icon>
+                <mat-hint>Hint: 1 upper case, 1 lower case, 1 Number, and special character</mat-hint>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option value="MALE">Male</mat-option>
+                  <mat-option value="FEMALE">Female</mat-option>
+                  <mat-option value="OTHER">Other</mat-option>
+                </mat-select>
+                <mat-hint>Hint:Select Male / Female</mat-hint>
+              </mat-form-field>
+              <div>
+              </div>
+              <button mat-raised-button submit [disabled]="!customerForm.valid" color="primary">{{customerForm.valid ? 'Register' : 'Fill all the fields to register as customer'}}</button>
+              </div>
+              </form>
+              <div class="NeedRegisterStyle" fxLayoutAlign="center" routerLink="/login">
+                Login as partner ?
+              </div>
+          </div>
+        </div>
+
+      </mat-card>
+  </div>
+</section>
+<!-- <app-howitwork></app-howitwork>
+<app-full-video-section [attributes]="videoAttribute"></app-full-video-section> -->
+
+<!-- Tab section End -->

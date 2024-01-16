@@ -1,0 +1,70 @@
+.user {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #fff;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    -webkit-box-shadow: 0 2px 26px 0 rgb(133 153 171 / 10%);
+    box-shadow: 0 2px 26px 0 rgb(133 153 171 / 10%);
+}
+
+
+.profilePic {
+    height: 300px;
+}
+
+.profileFrame {
+    margin: 10px;
+}
+
+.basicInfo p{
+    line-height: 1.8;
+}
+
+.padding10{
+    padding: 15px;
+}
+
+.vCenter {
+    vertical-align: middle;
+}
+
+.subtitle button{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -.18px;
+    color: #0083da;
+    text-transform: capitalize;
+    padding: 0;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    background: transparent;
+    float: right;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyValueInfo {
+    h6 {
+        margin-bottom: 6px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 17px;
+        color: #3b6585;
+        letter-spacing: 0;
+    }
+    p {
+        margin-bottom: 24px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #032946;
+        letter-spacing: -.2px;
+    }
+}

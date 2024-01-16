@@ -1,0 +1,47 @@
+<div class="clearfix clearHeader"></div>
+
+<div class="container" fxLayout="row">
+    <div fxFlex="20" fxHide.lt-md></div>
+    <div fxFlex="60" fxFlex.lt-md>
+    <div class="search">
+        <div class="search-align" fxLayout="row">
+        <div fxLayout="row " class="location">
+            <mat-icon aria-hidden="false" aria-label="Example home icon">location_on</mat-icon>
+            <span>Anywhere</span>
+        </div>
+        <input type="text" placeholder="search by title, company or keywork" [(ngModel)]="filter.search" (input)="onChangeSearch()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">search</mat-icon>
+        </div>
+    </div>
+    <ngx-ui-loader [loaderId]="'loader-04'"></ngx-ui-loader>
+    <div *ngIf="jobList.length" class="job-list-main has-slimscroll" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50" [scrollWindow]="false" (scrolled)="onScroll()">
+        <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+    <div fxLayout="row" class="job-list" *ngFor="let job of jobList">
+      <div class="job-logo" fxFlex="20" fxLayoutAlign="center center">
+        <img *ngIf="job.logo" src="{{s3path + job.logo}}">
+        <img *ngIf="!job.logo" src="assets/img/company.jpg">
+      </div>
+      <div fxFlex class="jobDetailMain" [routerLink]="['/candidate/view-job', job._id]">
+          <div class="jobDetails" fxLayout="column">
+            <h3 class="job-title" fxLayoutAlign="space-between center"><span>{{job.jobTitle}}</span></h3>
+            <h6 class="job-location" fxLayoutAlign.gt-lg="space-between center" >
+            <span>{{job.companyName}}  </span> | <span>{{job.location.country}}</span>
+            </h6>
+            <p class="job-timing"><span>{{job.createdAt | dateAgo}} </span> . <span>{{job.application}} applied</span></p>
+            <div class="job-type">
+                <p>Remote</p>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div fxLayout="row" style="position: relative;">
+        <ngx-ui-loader [loaderId]="'loader-02'"></ngx-ui-loader>
+    </div>
+    </div>
+    <div *ngIf="isNotFound" class="vh100-center vh100-border">
+        <h1 class="title">Not Found</h1>
+    </div>
+
+    </div>
+    <div fxFlex="20" fxHide.lt-md></div>
+    </div>

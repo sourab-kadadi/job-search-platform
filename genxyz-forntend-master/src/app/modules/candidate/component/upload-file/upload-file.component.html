@@ -1,0 +1,39 @@
+<label class="fileUpload"  for="fileUpload" *ngIf="!cvData">
+    <div class="container-dash">
+      <span class="material-icons needtoUpload">
+        upload_file
+        </span>
+        <p>Click here to upload your CV</p>
+        <mat-progress-bar *ngIf="progressBarVisible" [mode]="mode" [value]="value"></mat-progress-bar>
+      <input type="file" name="fileUpload" id="fileUpload" (change)="uploadFileToS3($event)" accept=".docx,.rtf,.docx,.pdf">
+    </div>
+  </label>
+  <div class="viewFileUpload" *ngIf="cvData">
+    <div class="container-dash">
+      <div class="uploadedFileDiv">
+      <span class="material-icons uploadedFileIcon">
+        insert_drive_file
+        </span>
+        <input type="file" name="fileUpload" id="fileUpload" (change)="uploadFileToS3($event)" accept=".docx,.rtf,.docx,.pdf">
+        <span class="uploadedFileText">PDF</span>
+        </div>
+        <mat-progress-bar *ngIf="progressBarVisible" [mode]="mode" [value]="value"></mat-progress-bar>
+        <p>{{cvData.fileName}}</p>
+        <div class="actionButtonMain">
+          <label for="fileUpload">
+        <span class="material-icons colorGreen" matTooltip="Upload"  matTooltipPosition="left">
+          file_upload
+          </span>
+          </label>
+          <a href="{{s3path + cvData.filePath}}" download target="_self">
+          <span class="material-icons colorOrange" matTooltip="Downlaod" matTooltipPosition="below">
+            download
+            </span>
+            </a>
+            <span class="material-icons colorRed" matTooltip="Delete" matTooltipPosition="right" (click)="deleteFile()">
+              delete
+              </span>
+              </div>
+    </div>
+  </div>
+  <p>Supported file formats: doc, rtf, docx, pdf | upto 1 mb</p>

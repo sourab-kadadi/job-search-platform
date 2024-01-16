@@ -1,0 +1,31 @@
+.logoImage {
+    height: 81px !important;
+    /* width: 433px; */
+    padding: 15px;
+    /* max-width: 500px !important; */
+    max-height: 300px !important;
+    margin-top: 37px;
+    padding-left: 0px;
+    padding-top: 0px;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .logoImage {
+        height: 80px !important;
+    }
+  }
+
+
+  .menu-drop {
+    border: none;
+    background: none;
+    padding: 10px;
+  }
+
+
+
+  .menu-drop:hover{
+    background: #80808017;
+    border-radius: 10px;
+}

@@ -1,0 +1,52 @@
+<div class="clearfix clearHeader"></div>
+
+<div class="container">
+    <div fxLayout="row">
+        <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+    <div fxFlex.gt-md="20"></div>
+    <div fxFlex.gt-md="60">
+    <div  class="view-company-details">
+        <div class="view-image">
+            <img *ngIf="jobPostDetails.logo" src="{{s3path + jobPostDetails.logo}}">
+            <img *ngIf="!jobPostDetails.logo" src="assets/img/company.jpg">
+        </div>
+        <div class="view-company-name">
+            <span>{{jobPostDetails?.companyName}}</span>
+        </div>
+            <h4 class="view-job-title">{{jobPostDetails?.jobTitle}}</h4>
+       <span>{{jobPostDetails?.location.country}}</span>
+       <button *ngIf="jobPostDetails?.application <= 0" class="applybutton" (click)="applyJobs()"><span class="material-icons-outlined">
+        task_alt
+        </span>Apply</button>
+       <div *ngIf="jobPostDetails?.application > 0" class="application-submitted"> <span class="material-icons-outlined">
+        lightbulb
+        </span> Application Submitted</div>
+       <div>
+    </div>
+    </div>
+
+    <div class="view-job-description" fxLayout="column">
+        <div class="view-job-salary" fxLayoutAlign="center center">
+       <span *ngIf="jobPostDetails.ctc.min != 0 && jobPostDetails.ctc.max != 0">Offer: <span *ngIf="jobPostDetails.ctc.min != 0">{{jobPostDetails?.ctc.min}}</span> <span *ngIf="jobPostDetails.ctc.min != 0">- {{jobPostDetails?.ctc.max}}</span> {{jobPostDetails?.ctc.currency.name}}</span>
+       </div>
+       <mat-divider></mat-divider>
+
+        <div class="view-desc-title" fxLayoutAlign="space-between center"><span>Job Description </span></div>
+        <div class="view-angular-editor" [innerHtml]="jobPostDetails?.jobDescription"></div>
+        <mat-divider></mat-divider>
+        <div class="bottom-buttons">
+            <button *ngIf="jobPostDetails?.application <= 0" class="applybutton" (click)="applyJobs()"><span class="material-icons-outlined">
+                task_alt
+                </span>Apply</button>
+             <a class="show-more" [routerLink]="['/candidate/candidate-job']">See more Jobs<span class="material-icons-outlined">
+                arrow_right
+                </span></a>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    </div>
+    <div fxFlex.gt-md="20">
+    </div>
+    </div>
+</div>
+<app-footer></app-footer>

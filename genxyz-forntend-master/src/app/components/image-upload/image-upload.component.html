@@ -1,0 +1,18 @@
+
+<div class="row" class="profilePic">
+    <label for="uploadImage">
+    <div *ngIf="imageData && imageData.filePath" class="imageMain">
+  <img  width="100%" height="100%" src="{{ s3path + imageData.filePath }}" />
+  <span class="material-icons cancelButton" (click)="deleteFile()" matTooltip="Delete" matTooltipPosition="right"> cancel </span>
+  </div>
+  </label>
+  <div *ngIf="!(imageData && imageData.filePath)">
+    <label for="uploadImage">
+      <div class="initImgMain">
+        <span class="material-icons"> {{icon}} </span>
+        <p>{{text}}</p>
+      </div>
+    </label>
+  </div>
+</div>
+<input type="file" name="uploadImage" id="uploadImage" (change)="uploadFileToS3($event)" accept=".png, .jpg, .jpeg" />

@@ -1,0 +1,99 @@
+.fileUpload {
+    .container-dash {
+        cursor: pointer;
+        border: 2px dashed gainsboro;
+        height: 146px;
+        .needtoUpload {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            /* width: 100px; */
+            font-size: 96px;
+            color: gainsboro;
+        }
+        p {
+            justify-content: center;
+    align-items: center;
+    display: flex;
+        }
+    }
+    input[type="file"] {
+        display: none;
+        cursor: pointer;
+    }
+}
+
+.uploadedFileIcon {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 96px;
+    color: rgb(63, 134, 255);
+}
+
+.uploadedFileDiv {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 114px !important;
+    input[type="file"] {
+        display: none;
+        cursor: pointer;
+    }
+}
+
+.uploadedFileText {
+    position: absolute;
+    bottom: 22px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+} 
+
+.uploadClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    columns: red;
+}
+
+.actionButtonMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        cursor: pointer;
+        padding: 11px;
+        margin: 5px;
+        // background: orange;
+        color: #fff;
+        border-radius: 50%;
+        box-shadow: 6px 6px 10px -1px rgba(0,0,0,0.15),
+                        -6px -6px 10px -1px rgba(255,255,255,0.7);
+    }
+}
+
+.viewFileUpload{
+    .container-dash{
+        border: 2px dashed gainsboro;
+        height: 218px;
+    }
+    p {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+}
+
+.colorGreen {
+    background-color: #86B988;
+}
+
+.colorRed {
+    background-color: #BA8686;
+}
+
+.colorOrange {
+    background-color: #FFC064;
+}

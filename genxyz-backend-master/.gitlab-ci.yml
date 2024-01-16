@@ -1,0 +1,36 @@
+variables:
+  DOCKER_REGISTRY: 890468601259.dkr.ecr.ap-south-1.amazonaws.com
+  APP_NAME: factsdex-service
+  AWS_DEFAULT_REGION: eu-west-2
+  DOCKER_HOST: tcp://docker:2375
+
+publish:
+  image:
+    name: amazon/aws-cli
+    entrypoint: [""]
+  services:
+    - docker:dind
+  before_script:
+    - amazon-linux-extras install docker
+    - aws --version
+    - docker --version
+  script:
+    - aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY
+    - docker build -t $DOCKER_REGISTRY/$APP_NAME:latest -t $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID .
+    - docker push $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID
+  only: ["master"]
+
+# Job Two for deploy build to server
+deploy_master:
+  stage: deploy
+  image: alpine
+  before_script:
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  script:
+    - ssh -o StrictHostKeyChecking=no ubuntu@$SERVER_IP "docker stop $APP_NAME; docker rm $APP_NAME; aws ecr get-login-password --region ap-south-1 | docker login --username AWS --password-stdin $DOCKER_REGISTRY;
+      docker pull $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID; docker run --name $APP_NAME -itd --net="host" $DOCKER_REGISTRY/$APP_NAME:$CI_PIPELINE_IID;docker image prune -a --force"
+  only: ["master"]

@@ -1,0 +1,309 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$genxyz-new-primary: mat.define-palette(mat.$indigo-palette);
+$genxyz-new-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$genxyz-new-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$genxyz-new-theme: mat.define-light-theme((
+  color: (
+    primary: $genxyz-new-primary,
+    accent: $genxyz-new-accent,
+    warn: $genxyz-new-warn,
+  )
+));
+$themeColor: #000971ad;
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($genxyz-new-theme);
+
+html, body { height: 100%; }
+// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width {
+  width: 100%;
+}
+
+.upload-pic {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.posRelative {
+    position: relative;
+}
+
+.subtitleCustom {
+  font-size: 18px;
+    font-weight: 600;
+    line-height: 18px;
+    color: #032946;
+    letter-spacing: -.39px;
+    margin-bottom: 8px;
+}
+
+.subtitleCustom button{
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  letter-spacing: -.18px;
+  color: #0083da;
+  text-transform: capitalize;
+  padding: 0;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  float: right;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyValueInfo {
+  h6 {
+      margin-bottom: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 17px;
+      color: #3b6585;
+      letter-spacing: 0;
+  }
+  p {
+      margin-bottom: 24px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      color: #032946;
+      letter-spacing: -.2px;
+  }
+}
+
+
+.angular-editor-textarea ul, .view-angular-editor ul {
+  display: block !important;
+  list-style-type: disc !important;
+  margin-block-start: 1em !important;
+  margin-block-end: 1em !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
+  padding-inline-start: 40px !important;
+}
+
+.angular-editor-textarea ol, .view-angular-editor ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+
+
+
+///////////////////////////// JOB LIST /////////////////////////////////
+.search {
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+  border-radius: 17px;
+  position: relative;
+  .search-align {
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    .location {
+        border-right: 2px solid gainsboro;
+    }
+    .location mat-icon, .location span{
+        color: navy;
+    }
+    .location span{
+        font-weight: 600;
+        margin-right: 5px;
+    }
+  }
+  input {
+    width: 99%;
+    border: none;
+    margin: 5px;
+    font-weight: 600;
+  }
+  input:focus-visible {
+    outline: none;
+  }
+}
+
+.job-list-main {
+  position: relative;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 84vh;
+}
+
+.job-list {
+    cursor: pointer;
+    margin: 15px;
+    box-shadow: 1px 1px 4px 1px gainsboro;
+    border-radius: 15px;
+    padding: 20px;
+    .job-logo img {
+        height: 50px;
+    }
+
+    .job-title {
+        font-weight: 640;
+    }
+
+    .job-location  {
+        margin-right: 10px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    .job-timing {
+        span:nth-child(1){
+            font-size: 10px;
+            font-weight: 500;
+            color: indigo;
+        }
+        span:nth-child(2){
+            font-size: 10px;
+            font-weight: 500;
+            color: blueviolet;
+        }
+    }
+}
+
+.jobDetailMain {
+    margin: 10px;
+}
+
+.height-100vh {
+  height: 100vh;
+}
+
+
+/////////////////////// AUTH //////////////////////////////
+mat-form-field mat-icon {
+    color: $themeColor;
+}
+
+.cardStyle {
+    margin: 30px;
+}
+
+.SignUpFormStyle {
+padding: 10px;
+}
+
+.headerMargin {
+    margin-top: 100px;
+}
+
+.titleRegistration {
+ color: #fff;
+}
+
+.fromStyle {
+    padding: 30px;
+}
+
+.mat-tab-header {
+    margin-bottom: 25px;
+}
+
+
+// .sign-up-background {
+//     background-color: $themeColor;
+// }
+
+.forgotPasswordStyle {
+    color: $themeColor;
+    font-weight: 500;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.NeedRegisterStyle {
+    color: $themeColor;
+    font-weight: 500;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.marginHeaderClear {
+    margin-top: 86px;
+}
+
+/////////////////////// AUTH //////////////////////////////
+
+.clearHeader {
+  height: 4.6rem !important;
+}
+
+.mat-fab-bottom-right {
+  position: fixed;
+  right: 30;
+  bottom: 30;
+  z-index: 999;
+}
+
+
+// snackbar
+
+.snackbar-success {
+background-color: rgb(62, 121, 62);
+}
+
+.snackbar-error {
+background-color: rgb(161, 79, 79);
+}
+
+.vh100-center {
+  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.vh100-border {
+  border: 2px dashed gray;
+  margin: 30px;
+}
+
+.padding-30-tb {
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+}
+
+.section-background-custom {
+  background: linear-gradient(
+    355deg, #eaecf0, transparent)  !important;
+}
+
+.hire-button-color {
+  color: navy !important;
+  border-color: navy !important;
+}

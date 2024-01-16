@@ -1,0 +1,39 @@
+<div class="clearfix clearHeader"></div>
+<div fxLayout="row wrap " fxLayoutGap="10px">
+    <div class="boxShadow padding10 box" fxFlex="20">
+        <div>
+          <!-- <mat-progress-bar [mode]="mode" [value]="value"></mat-progress-bar> -->
+          </div>
+      </div>
+    <div #keySkills class="row box" fxFlex>
+        <app-image-upload [text]="'Upload Logo'" [icon]="" [imageData]="user?.companyDetails.logo" (onSave)="saveProfilePic($event)"></app-image-upload>
+        <form #basicInfo="ngForm" (ngSubmit)="Save()">
+            <div fxLayout="row wrap" fxLayoutGap="10px">
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input type="text" name="firstName" [(ngModel)]="user.firstName" matInput placeholder="Ex. 4" />
+              </mat-form-field>
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input type="text" name="lastName" [(ngModel)]="user.lastName" matInput placeholder="Ex. 4" />
+              </mat-form-field>
+            </div>
+            <!-- </h1> -->
+            <div fxLayout="row wrap" fxLayoutGap="10px">
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" name="email" [(ngModel)]="user.email" matInput placeholder="Ex. 4" />
+              </mat-form-field>
+              <mat-form-field fxFlex appearance="fill">
+                <mat-label>Mobile No.</mat-label>
+                <input type="text" name="phoneNo" [(ngModel)]="user.phoneNo" matInput placeholder="Ex. 4" />
+              </mat-form-field>
+            </div>
+            <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+              <button mat-raised-button color="primary" type="submit">Save</button>
+              <button mat-raised-button color="warn" type="button" (click)="Cancel()">Cancel</button>
+            </div>
+          </form>
+    </div>
+    <div class="row"></div>
+  </div>

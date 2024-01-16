@@ -1,0 +1,28 @@
+
+<div class="container">
+  <iframe frameborder="0" style="height:1130px;width:99%;border:none;" src='https://forms.zohopublic.in/genxyztechnologiesprivatelimti/form/CandidateDetails/formperma/B5qX5AghqJAFu40W2Lq4vfffXYi8dhod0C_hzR9oD7o'></iframe>
+    <script type="text/javascript">
+      var ngsFrame = document.getElementById("ngsFrame");
+      if (window.location.href && window.location.href.indexOf("?") > -1) {
+        var queryParamsIndex = window.location.href.indexOf("?");
+        queryParamsIndex >= 0 &&
+          (ngsFrame.src =
+            ngsFrame.src + (ngsFrame.src.indexOf("?") >= 0 ? "&" : "?") + window.location.href.substr(queryParamsIndex + 1));
+      }
+      (window.frameCallback = function(e) {
+        if (e.data.type) {
+          var a = document.getElementById("ngsFrame");
+          switch (e.data.type) {
+            case "setFormHeight":
+              a.style.height = e.data.value + "px";
+              break;
+            case "setFormWidth":
+              (a.style.width = e.data.value + "px"), (a.style.minWidth = "unset");
+          }
+        }
+      }),
+        window.addEventListener
+          ? window.addEventListener("message", frameCallback, !1)
+          : window.attachEvent && window.attachEvent("onmessage", frameCallback);
+    </script>
+  </div>

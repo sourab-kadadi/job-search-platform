@@ -1,0 +1,148 @@
+
+   <form #jobPost="ngForm" (ngSubmit)="save()">
+   <div class="boxShadow padding10" fxFlex="20" fxHide.lt-md>
+        <h1 class="leftText">Find Your Best Talent</h1>
+       </div>
+       <div class="boxShadow padding10" fxFlex>
+           <mat-card class="example-card">
+               <!-- <mat-card-subtitle>Find your best talent by filling the form</mat-card-subtitle> -->
+               <mat-card-title>
+                   <h4 class="subtitleCustom">
+                   Job Details
+                 </h4></mat-card-title>
+               <mat-card-content>
+                   <div fxLayout="row wrap" >
+                       <mat-form-field fxFlex appearance="fill" >
+                           <mat-label>Job Title</mat-label>
+                           <input type="text" matInput placeholder="Job Titles" name="jobTitle" [(ngModel)]="jobDetails.jobTitle" required>
+                           <mat-error>Please enter job title</mat-error>
+                         </mat-form-field>
+                         <mat-form-field class="chip-list full-width" appearance="fill">
+                            <mat-label>Enter Your Skill Set</mat-label>
+                            <mat-chip-list #chipList aria-label="Enter Your skills">
+                              <mat-chip
+                                color="primary"
+                                selected
+                                *ngFor="let skill of jobDetails.keyWord"
+                                [selectable]="true"
+                                [removable]="true"
+                                (removed)="remove(skill)"
+                              >
+                                {{ skill.name }}
+                                <mat-icon matChipRemove>cancel</mat-icon>
+                              </mat-chip>
+                              <input
+                                placeholder="Skills"
+                                [matChipInputFor]="chipList"
+                                [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                (matChipInputTokenEnd)="add($event)"
+                              />
+                            </mat-chip-list>
+                          </mat-form-field>
+                         <!-- <mat-form-field class="full-width" appearance="fill" >
+                           <mat-label>Job Description</mat-label>
+                           <textarea matInput placeholder="Description Your Job..." [(ngModel)]="jobDetails.jobDescription"> </textarea>
+                         </mat-form-field> -->
+                           <mat-form-field fxFlex="calc(50% - 10px)" appearance="fill">
+                               <mat-label>Industry</mat-label>
+                               <mat-select class="full-width" name="industry" [(ngModel)]="jobDetails.industry" required>
+                                 <mat-option *ngFor="let industry of industrys" [value]="industry.name">{{industry.name}}</mat-option>
+                               </mat-select>
+                                <mat-error>Please select Indurstry your are into..</mat-error>
+                             </mat-form-field>
+                         <mat-form-field fxFlex="calc(50% - 10px)" appearance="fill" >
+                           <mat-label>vacancies</mat-label>
+                           <input type="number" matInput placeholder="Vacancies for this job" name="vacancies" [(ngModel)]="jobDetails.vacancies">
+                         </mat-form-field>
+                   </div>
+
+                   <h4 class="subtitleCustom">
+                    Location
+                  </h4>
+                <div fxLayout="row wrap" fxLayoutGap.gt-md="10px" >
+                    <mat-form-field fxFlex appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <mat-select class="full-width" name="country" [(ngModel)]="jobDetails.location.country" required (selectionChange)="getAllState(jobDetails.location.country)">
+                          <mat-option *ngFor="let country of countrys" [value]="country.name">{{country.name}}</mat-option>
+                        </mat-select>
+                         <mat-error>Please select country</mat-error>
+                      </mat-form-field>
+                      <mat-form-field fxFlex appearance="fill">
+                        <mat-label>State</mat-label>
+                        <mat-select class="full-width" name="state" [(ngModel)]="jobDetails.location.state" required>
+                          <mat-option *ngFor="let state of states" [value]="state.name">{{state.name}}</mat-option>
+                        </mat-select>
+                         <mat-error>Please select state</mat-error>
+                      </mat-form-field>
+                      <!-- <mat-form-field fxFlex appearance="fill">
+                        <mat-label>City</mat-label>
+                        <mat-select class="full-width" name="city" [(ngModel)]="jobDetails.location.city" required>
+                          <mat-option *ngFor="let city of citys" [value]="city">{{city}}</mat-option>
+                        </mat-select>
+                         <mat-error>Please select city</mat-error>
+                      </mat-form-field> -->
+                      <mat-form-field fxFlex appearance="fill" >
+                        <mat-label>City</mat-label>
+                        <input type="text" matInput placeholder="Enter city name" name="city" [(ngModel)]="jobDetails.location.city">
+                      </mat-form-field>
+                </div>
+
+                   <h4 class="subtitleCustom">
+                       Work Expereince
+                     </h4>
+                   <div fxLayout="row wrap" fxLayoutGap="10px" >
+                         <mat-form-field fxFlex="calc(50% - 10px)" appearance="fill" >
+                           <mat-label>Minimum</mat-label>
+                           <input type="number" matInput placeholder="Min Expereince" min="0" name="minExp" [(ngModel)]="jobDetails.workExp.min" required>
+                           <mat-error>Please enter minmum work experirence, In case of freshers enter 0</mat-error>
+                         </mat-form-field>
+                         <mat-form-field fxFlex="calc(50% - 10px)" appearance="fill" >
+                           <mat-label>Maximum</mat-label>
+                           <input type="number" matInput placeholder="Max Expereince" min="0" name="maxExp" [(ngModel)]="jobDetails.workExp.max" required>
+                           <mat-error>Please enter minmum work experirence, In case of freshers enter 0</mat-error>
+                         </mat-form-field>
+                   </div>
+
+                   <h4 class="subtitleCustom">
+                       Salary
+                     </h4>
+                   <div fxLayout="row wrap" fxLayoutGap.gt-md="10px" >
+                         <mat-form-field fxFlex appearance="fill">
+                            <mat-label>Currency</mat-label>
+                            <mat-select class="full-width" name="currency" [(ngModel)]="jobDetails.ctc.currency" required="false">
+                              <mat-option *ngFor="let currency of currencys" [value]="currency.name"  >{{currency.name}}</mat-option>
+                            </mat-select>
+                           <mat-error>Please select the currency</mat-error>
+                          </mat-form-field>
+                         <mat-form-field fxFlex appearance="fill" >
+                           <mat-label>Minimum</mat-label>
+                           <input type="number" matInput placeholder="Min Salary" name="ctcMin" [(ngModel)]="jobDetails.ctc.min"  required="false">
+                           <mat-error>Please select the minimum salary u will be offering fo this job</mat-error>
+                         </mat-form-field>
+                         <mat-form-field fxFlex appearance="fill" >
+                           <mat-label>Maximum</mat-label>
+                           <input type="number" matInput placeholder="Max Salary" name="ctcMax" [(ngModel)]="jobDetails.ctc.max"  required="false">
+                           <mat-error>Please select the maximum salary u will be offering fo this job</mat-error>
+                         </mat-form-field>
+                   </div>
+
+                   <h4 class="subtitleCustom">
+                    Job Description
+                  </h4>
+                <div fxLayout="row wrap" fxLayoutGap="10px" >
+                    <angular-editor style="width: 100%; margin-bottom: 20px !important;" [placeholder]="'Job Description'" name="jobDescription" [(ngModel)]="jobDetails.jobDescription" [config]="editorConfig" required></angular-editor>
+                </div>
+               </mat-card-content>
+               <!-- <mat-divider inset></mat-divider> -->
+               <mat-card-actions>
+                   <div fxLayout fxLayoutAlign="center center" fxLayoutGap="10px">
+                       <button mat-raised-button color="warn" type="button" (click)="cancelButton()">Cancel</button>
+                       <button mat-raised-button color="primary" type="submit">Save</button>
+                   </div>
+               </mat-card-actions>
+               <mat-card-footer>
+                 <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+               </mat-card-footer>
+             </mat-card>
+       </div>
+       </form>

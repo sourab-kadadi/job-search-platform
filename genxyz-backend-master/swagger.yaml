@@ -1,0 +1,65 @@
+openapi: 3.0.0
+# Added by API Auto Mocking Plugin
+servers:
+  - description: iknowjobs.com helps people search the jobs
+    url: https://virtserver.swaggerhub.com/samarth0718/iknowjobs.com/1.0.0
+info:
+  version: "1.0.0"
+  title: Monogdb Model
+  description: >-
+   keeping in mind that we search for opertunites.
+security:
+  - password:
+      - read
+      - write
+paths:
+  /signup:
+    post:
+      summary: user sign up
+      description: >-
+        sign up User as seeker and finder.
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    commonResModel:
+      type: object
+      required:
+        - success
+        - message
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+        error_code:
+          type: number
+    signUpReq:
+      type: object
+      required:
+            - firstName
+            - lastName
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        psw:
+          type: string
+        email:
+          type: string
+        phoneNo:
+          type: string
+        userName:
+          type: string
+        userType:
+          type: string
+          description: type of the user seeker
+          enum:
+            - student
+            - fresher
+            - experienced
+            - partTime
+    signupRes:
+      $ref: "#/components/schemas/commonResModel"

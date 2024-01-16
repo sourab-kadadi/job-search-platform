@@ -1,0 +1,91 @@
+.pricingTitle {
+    text-align: center;
+    color: #fff;
+}
+
+.pricingTitle h1 {
+    color: #fff !important;
+}
+
+.comment-h2 {
+    font-size: 1.2em;
+    display: block;
+    width: 100%;
+    font-style: italic;
+    justify-content: center;
+    align-self: center;
+    text-align:center;
+}
+
+.hero.is-medium .hero-body {
+    padding: 0 !important;
+}
+
+.plan-price span::before {
+    content: "$";
+    font-size: 2rem;
+}
+.price-head {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+}
+
+.plan-price span {
+display: block;
+font-weight: 700;
+font-size: 2rem;
+
+}
+.plan-price{
+    font-size: 1.8rem;
+    align-content: space-between;
+}
+
+// .plan-price {
+//     text-align: center;
+//     width: fit-content;
+// }
+
+.Schedule-Meeting {
+
+    margin: 20px;
+    font-size: 30px;
+    width: 100%;
+}
+
+.flex-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    column-gap: 3em;
+}
+
+.pricing-container {
+    margin-left: 12rem;
+    margin-right: 12rem;
+}
+
+.title-divider {
+    width: 100%;
+}
+
+
+@media only screen and (max-width: 767px) {
+
+    .pricing-container {
+        margin-left: 0rem;
+        margin-right: 0rem;
+        text-align: center;
+    }
+    .flex-card {
+        row-gap: 2em;
+    }
+    .comment-h2{
+        text-align: left;
+        padding: 10px;
+    }
+}

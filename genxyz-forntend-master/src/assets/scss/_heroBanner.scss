@@ -1,0 +1,123 @@
+/* ==========================================================================
+0. Hero
+========================================================================== */
+
+@keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  //Canvas
+  #demo-canvas {
+    position: absolute;
+    bottom: 20%;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .hero {
+    &.rounded-hero {
+      position: relative;
+      z-index: 3;
+  
+      &.is-active {
+        .absolute-header {
+          transform: translateY(0);
+  
+          .header-inner {
+            .states {
+              opacity: 1;
+              transform: translateY(-50%) scale(1);
+            }
+          }
+        }
+  
+        .hero-body {
+          .hero-mockup {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: all;
+          }
+        }
+      }
+  
+      .hero-body {
+        position: relative;
+        z-index: 1;
+  
+        .tag {
+          max-height: 18px;
+          font-weight: 500;
+        }
+  
+        .hero-mockup {
+          display: block;
+          max-width: 740px;
+          margin: 0 auto;
+          transform: translateY(10px);
+          opacity: 0;
+          border-radius: 12px;
+          box-shadow: $light-box-shadow;
+          pointer-events: none;
+          transition: all 0.4s;
+          transition-delay: 0.3s;
+        }
+  
+        .buttons {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+  
+  .is-hero-title {
+    z-index: 2;
+  
+    h1,
+    h2 {
+      color: $white;
+    }
+  }
+  
+  .absolute-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 580px;
+    
+    transform: translateY(-100%);
+    transition: all 0.3s;
+  
+    &.is-landing-demo {
+      background: $primary;
+      background: linear-gradient(-45deg, $secondary, $primary, $primary, $secondary);
+    }
+  
+    .header-inner {
+      position: relative;
+      height: 100%;
+      width: 100%;
+  
+      .cut-circle {
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  

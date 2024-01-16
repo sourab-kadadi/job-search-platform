@@ -1,0 +1,68 @@
+<div class="clearfix"></div>
+<!-- Title Header End -->
+<!-- Tab Section Start -->
+
+<div class="hero product-hero is-app-grey is-relative height-100vh">
+    <!-- Hero image -->
+    <div class="parallax-overlay" style="background-color: rgb(84, 83, 117);opacity: 0.3;background-image: url('/assets/img/client-login.jpg');"></div>
+    <div id="main-hero" class="hero-body align-center">
+        <div class="container has-text-centered">
+            <div class="columns is-vcentered">
+                <div class="column is-5 signup-column has-text-left">
+
+                    <!--Update Pill-->
+
+                    <h1 class="title main-title text-bold is-2">
+                        Welcome Back.
+                    </h1>
+                    <h2 class="subtitle is-5 no-margin-bottom body-color">
+                        Please sign in to your account
+                    </h2>
+                    <br>
+                </div>
+                <div class="column is-7">
+                    <!-- Hero mockup -->
+                    <!-- <figure class="image">
+                        <img src="assets/img/banner1.gif"  alt="">
+                    </figure> -->
+                    <section class="tab-sec sign-up-background">
+                        <!-- <div class="container" fxLayoutAlign="center"><h1 class="titleRegistration">Register as Partner</h1></div> -->
+                        <div>
+                          <mat-card class="cardStyle" fxFlex style="position: relative;">
+                            <div fxLayout="row">
+                              <!-- <div fxFlex="25" style="background-image:url(../../../assets/img/subSignUp.jpg);"></div> -->
+                              <div fxFlex class="SignUpFormStyle">
+                                <ngx-ui-loader [loaderId]="'loader-03'"></ngx-ui-loader>
+                                <form [formGroup]="customerForm" (ngSubmit)="custoemrFormSubmit()">
+                                  <div fxLayout="column">
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Email</mat-label>
+                                      <input type="email" matInput placeholder="Placeholder" formControlName="email" />
+                                      <mat-icon matSuffix>mark_as_unread</mat-icon>
+                                      <mat-hint>Hint: 007@gmail.com</mat-hint>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline">
+                                      <mat-label>Password</mat-label>
+                                      <input type="password" matInput placeholder="Placeholder" formControlName="psw" />
+                                      <mat-icon matSuffix>https</mat-icon>
+                                      <mat-hint
+                                        >Hint: P@$$w0rd</mat-hint
+                                      >
+                                    </mat-form-field>
+                                    <div class="forgotPasswordStyle" fxLayoutAlign="end">Forgot password ?</div>
+                                    <button mat-raised-button submit color="primary">Login</button>
+                                  </div>
+                                </form>
+                                <div class="NeedRegisterStyle" fxLayoutAlign="center" routerLink="/sign-up/client">I do not have an account yet</div>
+                              </div>
+                            </div>
+                          </mat-card>
+                        </div>
+                      </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

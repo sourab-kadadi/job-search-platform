@@ -1,0 +1,281 @@
+
+/* You can add global styles to this file, and also import other style files */
+/*! Bulkit | 5.0 | CSS Ninja */
+
+/* ==========================================================================
+Bulkit variables
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Base typography
+1. Bulkit colors
+2. State colors
+3. Social colors
+4. Predefined gradients
+5. Predefined box shadows
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Base typography
+========================================================================== */
+// $primary: blue;
+$font-main: "Nexa Bold", sans-serif;
+$font-sub:  'Outfit', sans-serif;
+$font-text: 'Outfit', sans-serif;;
+
+var {
+  font-style: normal;
+}
+
+p,
+ul li {
+  font-family: $font-text;
+}
+
+i {
+  font-style: normal;
+}
+
+/* ==========================================================================
+1. Bulkit colors
+========================================================================== */
+
+$white: #fff;
+$smoke-white: #fcfcfc;
+$grey-white: #f2f2f2;
+$grey-white-accent: #e2e2e2;
+$command-grey: #fafbfc;
+$light-grey: #eff4f7;
+$ultra-light-grey: #f7fcff;
+$light-white: #fafafa;
+$title-grey: #000000;
+$input-grey: #dbdbdb;
+$input-border: #dee2e6;
+$blue-grey: #000000;
+$blue-grey-light: lighten($blue-grey, 5%);
+$light-blue-grey: #98a9c3;
+$medium-grey: #66676b;
+$basaltic-grey: #878787;
+$muted-grey: rgb(3, 3, 3);
+$section-grey: #fbfbfb;
+$section-grey-accent: #efefef;
+$background-grey: #f3f5f7;
+$header-grey: #f5f9fc;
+$default-input: #ccc;
+$placeholder: #cecece;
+$fade-grey: #ededed;
+$sidebar: #344258;
+$coal: #444444;
+$grey-6: #666;
+$grey-5: #555;
+$grey-3: #333;
+$med-grey: #6f7592;
+$cream-grey: #f6f4ff;
+$icon-grey: #818a97;
+$border-grey: #d4dadf;
+$border-light: #e1e8ee;
+$dashboard-grey: #f4f6fb;
+$widget-grey: #f2f4f8;
+$link-grey: #f5f5f5;
+$border: #d4dadf;
+
+
+/* ==========================================================================
+2. State colors
+========================================================================== */
+
+$red: #e62965;
+$blue: #039be5;
+$green: #06d6a0;
+$orange: #eda514;
+
+$info: $blue;
+$success: $green;
+$warning: $orange;
+$danger: $red;
+
+$purple: #8269b2;
+$azur: #37c3ff;
+$red: #f92b60;
+$salmon: #ffa981;
+$yellow: #ffd66e;
+$grass: #93e088;
+$pink: #ff9eb8;
+$light-blue: #77d2f3;
+
+/* ==========================================================================
+3. Social colors
+========================================================================== */
+
+$facebook: #3b5998;
+$twitter: #1dcaff;
+$linkedin: #007bb6;
+$tumblr: #35465c;
+$github: #444;
+$dribbble: #ea4c89;
+$google-plus: #d34836;
+$youtube: #cc181e;
+$reddit: #ff4500;
+
+/* ==========================================================================
+4. Predefined gradients
+========================================================================== */
+
+$modal-ga: #6a85b6;
+$modal-gb: #bac8e0;
+
+$webkit-modal-gradient: -webkit-linear-gradient(
+  45deg,
+  $modal-ga 0%,
+  $modal-gb 100%
+);
+$modal-gradient: linear-gradient(45deg, $modal-ga 0%, $modal-gb 100%);
+
+$coal-a: $blue-grey;
+$coal-b: #444;
+
+$webkit-coal-gradient: -webkit-linear-gradient(45deg, $coal-a, $coal-b);
+$coal-gradient: linear-gradient(45deg, $coal-a, $coal-b);
+
+
+
+
+/***
+TABLE OF CONTENTS
+=============================================================================
+0. Theme color variables
+1. Theme gradient
+2. Pageloader
+3. Theme specific Hero
+=============================================================================
+***/
+
+/* ==========================================================================
+0. Theme color variables
+========================================================================== */
+$primary: rgb(0,0,128);
+$secondary: rgb(0,0,128);
+$accent: #ad5cff;
+
+/* ==========================================================================
+1. Theme gradient
+========================================================================== */
+$webkit-hero-prime-gradient: linear-gradient(to right, $primary, darken($primary, 12%));
+$hero-prime-gradient: linear-gradient(to top, $primary, darken($primary, 12%));
+
+$webkit-hero-gradient: linear-gradient(to right, $secondary, $accent);
+$hero-gradient: linear-gradient(to top, $secondary, $accent);
+
+/* ==========================================================================
+2. Pageloader
+========================================================================== */
+.pageloader {
+    background-color: $primary !important;
+}
+
+/* ==========================================================================
+3. Theme specific Hero
+========================================================================== */
+.hero, .section {
+    &.is-theme-primary {
+        background-color: $primary;
+
+        .title {
+            color: $white;
+        }
+
+        .subtitle {
+            color: $white;
+        }
+    }
+
+    &.is-theme-secondary {
+        background-color: $secondary;
+
+        .title {
+            color: $white;
+        }
+
+        .subtitle {
+            color: $white;
+        }
+    }
+}
+
+
+/*! Bulkit | 5.0 | CSS Ninja */
+
+/* ==========================================================================
+Shadow variables
+========================================================================== */
+
+/***
+TABLE OF CONTENTS
+1. Predefined box shadows
+***/
+
+/* ==========================================================================
+1. Predefined box shadows
+========================================================================== */
+
+$base-shadow: rgba(0, 0, 0, 0.12);
+
+//Orange box shadow
+$orange-shadow-from: rgba(237, 165, 20, 0.42);
+$orange-shadow-to: rgba(237, 165, 20, 0.2);
+$orange-box-shadow: 0 14px 26px -12px $orange-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $orange-shadow-to !important;
+
+//Green box shadow
+$green-shadow-from: rgba(0, 178, 137, 0.42);
+$green-shadow-to: rgba(0, 178, 137, 0.2);
+$green-box-shadow: 0 14px 26px -12px $green-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $green-shadow-to !important;
+
+//Red box shadow
+$red-shadow-from: rgba(255, 114, 115, 0.42);
+$red-shadow-to: rgba(255, 114, 115, 0.2);
+$red-box-shadow: 0 14px 26px -12px $red-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $red-shadow-to !important;
+
+//Blue box shadow
+$blue-shadow-from: rgba(3, 155, 229, 0.42);
+$blue-shadow-to: rgba(3, 155, 229, 0.2);
+$blue-box-shadow: 0 14px 26px -12px $blue-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $blue-shadow-to !important;
+
+//Light box shadow
+$light-box-shadow: -1px 3px 15px 0 rgba(0, 0, 0, 0.06);
+
+//Primary box shadow
+$primary-shadow-from: rgba($primary, 0.42);
+$primary-shadow-to: rgba($primary, 0.2);
+$primary-box-shadow: 0 14px 26px -12px $primary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $primary-shadow-to !important;
+
+//Secondary box shadow
+$secondary-shadow-from: rgba($secondary, 0.42);
+$secondary-shadow-to: rgba($secondary, 0.2);
+$secondary-box-shadow: 0 14px 26px -12px $secondary-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $secondary-shadow-to !important;
+
+//Accent box shadow
+$accent-shadow-from: rgba($accent, 0.42);
+$accent-shadow-to: rgba($accent, 0.2);
+$accent-box-shadow: 0 14px 26px -12px $accent-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $accent-shadow-to !important;
+
+//Success box shadow
+$success-shadow-from: rgba($green, 0.42);
+$success-shadow-to: rgba($green, 0.2);
+$success-box-shadow: 0 14px 26px -12px $success-shadow-from, 0 4px 23px 0px $base-shadow, 0 8px 10px -5px $success-shadow-to !important;
+
+$morph-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+$morph-shadow-primary: 20px 20px 60px #6f6cad, -20px -20px 60px #9792e9;
+
+
+
+
+
+/*! Bulkit | 5.0 | CSS Ninja */
+
+/* ==========================================================================
+Main theme variables and styles (Main theme is used in "Startup Kit", in "Landing kit v1" and in all components pages)
+========================================================================== */
+
